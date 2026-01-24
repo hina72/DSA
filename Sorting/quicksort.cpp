@@ -3,6 +3,7 @@
 using namespace std;
 
 int prt(vector<int>& a, int l, int r){
+    // choose pivot
     int pivot = a[r];
     int i = l - 1;
     for(int j = l; j < r; j++){
