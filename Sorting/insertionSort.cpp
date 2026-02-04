@@ -1,30 +1,27 @@
 #include <bits/stdc++.h>
 using namespace std;
-// sorting function
+
 void insertionSort(int a[], int n){
-    for(int i = 0; i < n; i++){
-        for(int j = i + 1; j < n; j++){
-            if(a[i] < a[j]){
-                int z = a[i];
-                a[i] = a[j];
-                a[j] = z;
-            }
+    for(int i = 1; i < n; i++){
+        int k = a[i];
+
+        int j = i - 1;
+        while(j >= 0 && a[j] > k){
+            a[j + 1] = a[j];
+            j--;
         }
+        a[j + 1] = k;
     }
 }
 int main(){
-    // Array input
     int n;
     cin >> n;
     int a[n];
     for(int i = 0; i < n; i++){
         cin >> a[i];
     }
-
-    // process insertion sort
     insertionSort(a, n);
-
-    // Array output
+    
     for(int i = 0; i < n; i++){
         cout << a[i] << (char)32;
     }
